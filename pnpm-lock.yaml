@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@vueuse/components':
+    specifier: ^10.6.0
+    version: 10.6.0(vue@3.3.8)
   '@vueuse/core':
     specifier: ^10.6.0
     version: 10.6.0(vue@3.3.8)
@@ -637,6 +640,17 @@ packages:
       vue: 3.3.8
       vue-component-type-helpers: 1.8.4
     dev: true
+
+  /@vueuse/components@10.6.0(vue@3.3.8):
+    resolution: {integrity: sha512-vc9cmt3fd+wpMjhlq/wuXvEafSRY1XWlgzrxaExfVCRpWyLeqZ57hQ7rmcxbLkIbeaYqOO6Swc1OiT700hyR+A==}
+    dependencies:
+      '@vueuse/core': 10.6.0(vue@3.3.8)
+      '@vueuse/shared': 10.6.0(vue@3.3.8)
+      vue-demi: 0.14.6(vue@3.3.8)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@vueuse/core@10.6.0(vue@3.3.8):
     resolution: {integrity: sha512-+Yee+g9+9BEbvkyGdn4Bf4yZx9EfocAytpV2ZlrlP7xcz+qznLmZIDqDroTvc5vtMkWZicisgEv8dt3+jL+HQg==}

@@ -1,2 +1,7 @@
 export { default as HeroiconsSolidMenuAlt2 } from './HeroiconsSolidMenuAlt2.vue'
+export { default as HeroiconsBars220Solid } from './HeroiconsBars220Solid.vue'
 export { default as MdiClose } from './MdiClose.vue'
+export { default as Fa6SolidUserLarge } from './Fa6SolidUserLarge.vue'
+export { default as Fa6SolidCaretDown } from './Fa6SolidCaretDown.vue'
+export { default as Fa6SolidCartShopping } from './Fa6SolidCartShopping.vue'
+export { default as Fa6SolidMagnifyingGlass } from './Fa6SolidMagnifyingGlass.vue'

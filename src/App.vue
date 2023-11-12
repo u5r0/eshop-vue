@@ -1,11 +1,17 @@
 <template>
   <div class="font-bodyFont">
-    <Header />
+    <NavbarHeader />
+    <MainHeader />
+
     <RouterView />
   </div>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from './components/Header.vue';
+
+import {
+  NavbarHeader,
+  MainHeader,
+} from '@/components';
 </script>
