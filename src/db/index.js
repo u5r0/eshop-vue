@@ -53,7 +53,7 @@ export const categoryList = [
   'New Arrivals',
 ]
 
-export const profileOptions = [
+export const userOptions = [
   {
     _id: 'e3e469aa-b3ad-41fd-806a-40d04c01d82e',
     name: 'Login',

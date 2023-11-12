@@ -26,12 +26,12 @@
             </ul>
           </Motion>
           <HeroiconsSolidMenuAlt2 
-            @click=" sidenav = !sidenav" 
+            @click=" sidenavIsOpen = !sidenavIsOpen" 
             class="inline-block md:hidden cursor-pointer w-8 h-6 absolute top-6 right-4"
           />
 
           <div
-            v-if="sidenav"
+            v-if="sidenavIsOpen"
             class="fixed top-0 left-0 w-full h-screen bg-black text-gray-200 bg-opacity-80 z-50"
           >
             <Motion
@@ -40,7 +40,10 @@
               :transition="{ duration: 0.5 }"
             >
               <div class="relative w-[80%] bg-primeColor p-6">
-                <div class="overflow-scroll h-screen">
+                <div 
+                  ref="sidenavIsOpen" 
+                  class="overflow-scroll h-screen"
+                >
                   <img class="w-28 mb-6" :src="logoLight" alt="logoLightImg">
                   <ul class="text-gray-200 flex flex-col gap-2">
                     <RouterLink
@@ -118,21 +121,24 @@
 <script setup>
 import { ref } from 'vue';
 import { Motion } from 'motion/vue'
+import { onClickOutside, useEventListener } from '@vueuse/core';
 
 import { HeroiconsSolidMenuAlt2, MdiClose } from '@/components/icons';
 import { logo, logoLight } from "@/assets/images";
 import { navBarList, categoryList } from "@/db"
 
 const navbar = ref(true)
-const sidenav = ref(false)
+const sidenavIsOpen = ref(false)
 const category = ref(false)
 const brand = ref(false)
 
-window.addEventListener("resize", () => {
+const closeSideNav = () => sidenavIsOpen.value = false
+onClickOutside(sidenavIsOpen, closeSideNav)
+
+useEventListener(window, 'resize', () => {
+  closeSideNav()
   return window.innerWidth < 667 ? navbar.value = false : navbar.value = true
 });
 
-const closeSideNav = () => sidenav.value = false
-window.addEventListener("resize", closeSideNav)
-window.addEventListener("orientationchange", closeSideNav)
+useEventListener(window, "orientationchange", closeSideNav)
 </script>
