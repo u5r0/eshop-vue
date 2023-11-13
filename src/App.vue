@@ -1,7 +1,7 @@
 <template>
   <div class="font-bodyFont">
-    <NavbarHeader />
-    <MainHeader />
+    <Navbar />
+    <Main />
 
     <RouterView />
   </div>
@@ -11,7 +11,7 @@
 import { RouterView } from 'vue-router'
 
 import {
-  NavbarHeader,
-  MainHeader,
-} from '@/components';
+  Navbar,
+  Main,
+} from '@/components/shared/heading';
 </script>
