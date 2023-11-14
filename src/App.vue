@@ -1,15 +1,16 @@
 <template>
   <div class="font-bodyFont">
     <Navbar />
-    <MainHeader />
+    <Header />
     <NavWidgets />
     <RouterView />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
 
-import { Navbar, MainHeader } from '@/components/shared/heading';
+import { Navbar, Header } from '@/components/shared/heading';
 import NavWidgets from '@/components/shared/NavWidgets.vue';
 </script>
