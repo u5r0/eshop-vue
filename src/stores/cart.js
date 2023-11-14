@@ -2,10 +2,10 @@ import { ref, computed } from 'vue'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
 export const useCartStore = defineStore('cart', () => {
-  const cartProducts = ref([])
+  const cart = ref([])
 
   const getProductById = computed((productId) => 
-    cartProducts.value.find((p) => p._id === productId)
+    cart.value.find((p) => p._id === productId)
   )
 
   function addToCart(product) {
@@ -13,7 +13,7 @@ export const useCartStore = defineStore('cart', () => {
     if (productExists) {
       productExists.quantity += product.quantity;
     } else {
-      cartProducts.value.push(product);
+      cart.value.push(product);
     }
   }
 
@@ -34,15 +34,15 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function deleteItem(productId) {
-    cartProducts.value = cartProducts.value.filter((p) => p._id !== productId)
+    cart.value = cart.value.filter((p) => p._id !== productId)
   }
 
   function resetCart() {
-    cartProducts.value = []
+    cart.value = []
   }
 
   return {
-    cartProducts,
+    cart,
     addToCart,
     increaseQuantity,
     decreaseQuantity,

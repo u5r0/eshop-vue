@@ -34,12 +34,12 @@ import SearchField from './SearchField.vue';
 import UserMenu from './UserMenu.vue';
 
 const cartStore = useCartStore()
-const { cartProducts } = storeToRefs(cartStore)
+const { cart } = storeToRefs(cartStore)
 
 const userMenuIsOpen = ref(false)
 const categoryMenuIsOpen = ref(false)
 
 const numberOfCartItems = computed(() => {
-  return cartProducts.length > 0 ? cartProducts.length : 0
+  return cart.length > 0 ? cart.length : 0
 })
 </script>
