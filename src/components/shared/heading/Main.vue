@@ -40,6 +40,6 @@ const userMenuIsOpen = ref(false)
 const categoryMenuIsOpen = ref(false)
 
 const numberOfCartItems = computed(() => {
-  return cart.length > 0 ? cart.length : 0
+  return cart.value.length > 0 ? cart.value.length : 0
 })
 </script>
