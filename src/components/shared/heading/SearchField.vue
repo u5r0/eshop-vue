@@ -16,7 +16,7 @@
         <div
           v-for="product in filteredProducts"
           @click="handleNavigation(product.productName)"
-          class="max-w-[600px] h-28 bg-gray-100 mb-3 flex items-center gap-3"
+          class="max-w-[600px] h-28 bg-gray-100 hover:bg-gray-300 mb-3 flex items-center gap-3"
           :key="product._id"
         >
           <img class="w-24" :src="product.img" alt="productImg" />
