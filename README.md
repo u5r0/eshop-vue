@@ -1,6 +1,6 @@
-# eshop-vue
+# vShop
 
-Porting https://orebishopping.vercel.app to Vue
+> Porting https://orebishopping.vercel.app to Vue
 
 ## Project Setup
 
