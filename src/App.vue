@@ -4,7 +4,7 @@
     <Header />
     <NavWidgets />
     <RouterView />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
@@ -13,4 +13,5 @@ import { RouterView } from 'vue-router'
 
 import { Navbar, Header } from '@/components/shared/heading';
 import NavWidgets from '@/components/shared/NavWidgets.vue';
+import Footer from '@/components/shared/footing/Footer.vue';
 </script>

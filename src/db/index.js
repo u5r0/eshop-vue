@@ -53,7 +53,7 @@ export const categoryList = [
   'New Arrivals',
 ]
 
-export const userOptions = [
+export const accountOptions = [
   {
     _id: 'e3e469aa-b3ad-41fd-806a-40d04c01d82e',
     name: 'Login',
@@ -61,8 +61,8 @@ export const userOptions = [
   },
   {
     _id: '9e1b0c83-17aa-473c-a523-abb9510b2177',
-    name: 'Signup',
-    path: '/signup'
+    name: 'Orders',
+    path: '/orders'
   },
   {
     _id: 'bc610614-0773-46ce-a643-e6afde9889dc',

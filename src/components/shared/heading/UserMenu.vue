@@ -18,13 +18,13 @@
     >
       <ul>
         <RouterLink 
-          v-for="item in userOptions" 
+          v-for="option in accountOptions" 
           @click="isOpen = false"
-          :key="item._id"
-          :to="item.path"
+          :key="option._id"
+          :to="option.path"
         >
           <li class="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white cursor-pointer">
-            {{ item.name }}
+            {{ option.name }}
           </li>
         </RouterLink>
       </ul>
@@ -38,7 +38,7 @@ import { ref, watchEffect } from 'vue';
 import { OnClickOutside } from '@vueuse/components'
 
 import { Fa6SolidUserLarge, Fa6SolidCaretDown, } from '@/components/icons'
-import { userOptions } from '@/db'
+import { accountOptions } from '@/db'
 
 const props = defineProps({
   isOpen: {
