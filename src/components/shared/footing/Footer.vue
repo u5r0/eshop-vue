@@ -50,7 +50,10 @@
           </RouterLink>
         </ul>
       </div>
-      <Subscribe />
+      <div class="col-span-2 flex flex-col items-center w-full px-4">
+        <FooterListTitle title="Subscribe to our newsletter." />
+        <Subscribe />
+      </div>
     </div>
   </div>
   <Copyright />

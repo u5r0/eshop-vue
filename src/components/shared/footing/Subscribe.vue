@@ -1,6 +1,4 @@
 <template>
-  <div class="col-span-2 flex flex-col items-center w-full px-4">
-    <FooterListTitle title="Subscribe to our newsletter." />
     <div class="w-full">
       <p class="text-center mb-4">
         A at pellentesque et mattis porta enim elementum.
@@ -18,8 +16,8 @@
         <div class="flex flex-col w-full">
           <input
             type="text"
-            :value="emailInfo"
-            @input="emailInfo = $event.target.value"
+            :value="email"
+            @input="email = $event.target.value"
             placeholder="Insert your email ...*"
             class="w-full h-12 border-b border-gray-400 bg-transparent px-4 text-primeColor text-lg placeholder:text-base outline-none"
           />
@@ -43,7 +41,6 @@
         :src="paymentCard"
       />
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -53,23 +50,23 @@ import { Motion } from 'motion/vue';
 import { paymentCard } from "@/assets/images";
 
 const errMsg = ref('')
-const emailInfo = ref('')
+const email = ref('')
 const subscription = ref(false)
 
 const handleSubscription = () => {
-  if (emailInfo.value === "") {
+  if (email.value === "") {
     errMsg.value = "Please provide an Email !";
-  } else if (!validateEmail(emailInfo)) {
+  } else if (!validateEmail(email.value)) {
     errMsg.value = "Please give a valid Email!";
   } else {
     errMsg.value = ''
-    emailInfo.value = ''
+    email.value = ''
     subscription.value = true
   }
 };
 
-const validateEmail = () => {
-  return String(emailInfo)
+const validateEmail = (email) => {
+  return String(email)
     .toLocaleLowerCase()
     .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
 };
