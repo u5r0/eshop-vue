@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/components": "^10.6.0",
     "@vueuse/core": "^10.6.0",
     "motion": "^10.16.4",
@@ -18,6 +19,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.27",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.16",

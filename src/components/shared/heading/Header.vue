@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full h-fit bg-[#F5F5F3]">
-    <div class="grid grid-cols-3 grid-rows-2 lg:grid-rows-1 justify-around items-center w-full px-10 py-2 max-w-container mx-auto">
+    <div class="grid grid-cols-3 grid-rows-2 lg:grid-rows-1 justify-around items-center w-full px-10 pt-2 pb-4 max-w-container mx-auto">
       <CategoryMenu :isOpen="categoryMenuIsOpen" />
       <SearchField />
       <div class="relative col-end-5 flex items-center pr-4">
@@ -18,7 +18,6 @@
         </RouterLink>
       </div>
     </div>
-
   </div>
 </template>
 
