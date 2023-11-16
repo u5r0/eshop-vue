@@ -1,6 +1,6 @@
 <template>
   <div class="fixed top-52 right-2 z-20 hidden md:flex flex-col gap-2">
-    <RouterLink to="/signin">
+    <RouterLink to="/profile">
       <div class="bg-white w-16 h-[70px] rounded-md flex flex-col gap-1 text-[#33475b] justify-center items-center shadow-testShadow overflow-x-hidden group cursor-pointer">
         <div class="flex justify-center items-center">
           <MdiAccountBox class="text-2xl -translate-x-12 group-hover:translate-x-3 transition-transform duration-200" />

@@ -15,7 +15,7 @@
       <div v-if="searchQuery && filteredProducts.length">
         <div
           v-for="product in filteredProducts"
-          @click="handleNavigation(product.productName)"
+          @click="handleViewProduct(product.productName)"
           class="max-w-[600px] h-28 bg-gray-100 hover:bg-gray-300 mb-3 flex items-center gap-3"
           :key="product._id"
         >
@@ -40,27 +40,23 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
 import { OnClickOutside } from '@vueuse/components'
 
-import { paginationItems } from '@/db'
+import { productList } from '@/db'
 import { Fa6SolidMagnifyingGlass } from '@/components/icons'
-
-const router = useRouter()
+import { viewProduct } from '@/utils';
 
 const searchQuery = ref("")
 const filteredProducts = ref([])
 
 watch(searchQuery, (newQuery) => {
-  filteredProducts.value = paginationItems.filter(item =>
+  filteredProducts.value = productList.filter(item =>
     item.productName.toLowerCase()?.includes(newQuery.toLowerCase())
   );
 })
 
-const handleNavigation = (item) => {
-  const formatedroute = item.toLowerCase().split(" ").join("-");
-  
-  router.push(`/product/${formatedroute}`);
+const handleViewProduct = (routeId) => {
+  viewProduct(routeId);
   searchQuery.value = "";
 }
 </script>

@@ -74,6 +74,11 @@ export const accountOptions = [
     name: 'Settings',
     path: '/settings'
   },
+  {
+    _id: 'ef68ac6f-50f6-479c-b1f4-d3241db98078',
+    name: 'Logout',
+    path: '/logout'
+  },
 ]
 
 // =================== Special Offer data Start here ============
@@ -118,7 +123,7 @@ export const SplOfferData = [
 // =================== Special Offer data End here ==============
 
 // =================== PaginationItems Start here ===============
-export const paginationItems = [
+export const productList = [
   {
     _id: 1001,
     img: spfOne,
@@ -438,7 +443,7 @@ export const paginationItems = [
   {
     _id: 1036,
     img: newArrTwo,
-    productName: "Funny toys for babies",
+    productName: "Smart Watch",
     price: "60.00",
     color: "Mixed",
     badge: false,
