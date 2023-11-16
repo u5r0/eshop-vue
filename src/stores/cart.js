@@ -1,35 +1,39 @@
 import { ref, computed } from 'vue'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
+import { useProductsStore } from './products'
+
 export const useCartStore = defineStore('cart', () => {
   const cart = ref([])
+  
+  const getProductInCart = computed(() => {
+    return (productId) => cart.value.find((p) => p._id === productId)
+  })
 
-  const getProductById = computed((productId) => 
-    cart.value.find((p) => p._id === productId)
-  )
-
-  function addToCart(product) {
-    const productExists = getProductById.value(product._id)
-    if (productExists) {
-      productExists.quantity += product.quantity;
+  function addToCart(productQuantity) {
+    const productInCart = getProductInCart.value(productQuantity._id)
+    if (productInCart) {
+      productInCart.quantity++;
     } else {
-      cart.value.push(product);
+      const productsStore = useProductsStore()
+      const product = productsStore.getProductById(productQuantity._id)
+      cart.value.push({...productQuantity, ...product});
     }
   }
 
   function increaseQuantity(product) {
-    const productExists = getProductById.value(product._id)
-    if (productExists) {
-      productExists.quantity++
+    const productInCart = getProductInCart.value(product._id)
+    if (productInCart) {
+      productInCart.quantity++
     }
   }
 
   function decreaseQuantity(product) {
-    const productExists = getProductById.value(product._id)
-    if (productExists.quantity === 1) {
+    const productInCart = getProductInCart.value(product._id)
+    if (productInCart.quantity === 1) {
       return
     } else {
-      productExists.quantity--
+      productInCart.quantity--
     }
   }
 

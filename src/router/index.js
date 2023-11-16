@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
@@ -22,7 +22,17 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('@/views/AboutView.vue')
-    }
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import('@/views/product/ProductView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('@/views/CartView.vue')
+    },
   ]
 })
 
